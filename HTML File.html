@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAHARI CARS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .item {
+            border: 1px solid #ddd;
+            padding: 16px;
+            margin: 16px 0;
+            text-align: center;
+        }
+        .item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>FAHARI CARS</h1>
+<div class="item">
+    <h2>VOLKSWAGEN AMAROK</h2>
+    <img src="volkswagen.png" alt="Volkswagen Amarok">
+    <p>7,650,000.00 KSH<br>
+        2000CC<br>
+        ACCIDENT FREE</p>
+    <button class="button" onclick="showInterest('Volkswagen Amarok')">I'm Interested</button>
+    <button class="button" onclick="openModal('amarokModal')">View More</button>
+</div>
+<div class="item">
+    <h2>BUGATTI DIVO</h2>
+    <img src="bugati.png" alt="Bugatti Divo">
+    <p>10,650,000.00 KSH<br>
+        2000CC<br>
+        ACCIDENT FREE</p>
+    <button class="button" onclick="showInterest('Bugatti Divo')">I'm Interested</button>
+    <button class="button" onclick="openModal('divoModal')">View More</button>
+</div>
+<div class="item">
+    <h2>TOYOTA LANDCRUISER</h2>
+    <img src="toyotaprado.png" alt="Toyota Land Cruiser">
+    <p>6,650,000.00 KSH<br>
+        2000CC<br>
+        ACCIDENT FREE</p>
+    <button class="button" onclick="showInterest('Toyota Land Cruiser')">I'm Interested</button>
+    <button class="button" onclick="openModal('landCruiserModal')">View More</button>
+</div>
+
+<!-- Modals for each item -->
+<div id="amarokModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('amarokModal')">&times;</span>
+        <h2>VOLKSWAGEN AMAROK</h2>
+        <img src="volksw.png" alt="Volkswagen Amarok Extra Photo 1">
+        <img src="volks.png" alt="Volkswagen Amarok Extra Photo 2">
+        <!-- Add more images as needed -->
+    </div>
+</div>
+<div id="divoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('divoModal')">&times;</span>
+        <h2>BUGATTI DIVO</h2>
+        <img src="bugatti.png" alt="Bugatti Divo Extra Photo 1">
+        <img src="bugat.png" alt="Bugatti Divo Extra Photo 2">
+        <!-- Add more images as needed -->
+    </div>
+</div>
+<div id="landCruiserModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('landCruiserModal')">&times;</span>
+        <h2>TOYOTA LANDCRUISER</h2>
+        <img src="prado1.png" alt="Toyota Land Cruiser Extra Photo 1">
+        <img src="prado2.png" alt="Toyota Land Cruiser Extra Photo 2">
+        <!-- Add more images as needed -->
+    </div>
+</div>
+
+<script>
+    function showInterest(itemName) {
+        fetch('http://localhost:8080/interest', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ item: itemName })
+        }).then(response => {
+            if (response.ok) {
+                alert('Your interest has been noted. We will contact you shortly.');
+            } else {
+                alert('There was an error. Please try again.');
+            }
+        });
+    }
+
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+</script>
+</body>
+</html>
