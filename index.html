@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAHARI CARS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center; /* Center the content */
+            background-color: #ADD8E6; /* Light blue background */
+            color: black; /* Change text color to black for better readability */
         }
         .item {
             border: 1px solid #ddd;
@@ -13,6 +17,7 @@
             margin: 16px auto; /* Center the items */
             text-align: center;
             max-width: 600px; /* Limit the width of the item */
+            background-color: white; /* Background color for item to make it stand out */
         }
         .item img {
             max-width: 100%;
@@ -64,9 +69,19 @@
             max-width: 100%;
             height: auto;
         }
+        marquee {
+            font-size: 2rem;
+            color: #FF5720;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+<div class="content">
+    <h1>Welcome to Fahari Car</h1>
+    <p>Your trusted partner in luxury cars</p>
+</div>
+<marquee behavior="scroll" direction="left">HELLO! Fahari Car Got you!</marquee>
 <h1>FAHARI CARS</h1>
 <div class="item">
     <h2>VOLKSWAGEN AMAROK</h2>
@@ -74,7 +89,7 @@
     <p>7,650,000.00 KSH<br>
         2000CC<br>
         ACCIDENT FREE</p>
-    <a href="https://wa.me/254727016623text=hello%20mr%20ronald%20amintrested%20in%20VOLKSWAGEN20AMAROK%20https://github.com/rhonaldh265/fahari-cars/blob/main/volkswagen.png?raw=true"class="button">I'm Interested in VOLKSWAGEN AMAROK</a>
+    <a href="https://wa.me/254727016623?text=Hello%20Mr.%20Ronald,%20I%20am%20interested%20in%20VOLKSWAGEN%20AMAROK.%20Image:%20https://github.com/rhonaldh265/fahari-cars/blob/main/volkswagen.png?raw=true" class="button">I'm Interested</a>
     <button class="button" onclick="openModal('amarokModal')">View More</button>
 </div>
 <div class="item">
@@ -83,17 +98,16 @@
     <p>10,650,000.00 KSH<br>
         2000CC<br>
         ACCIDENT FREE</p>
-    <a href=https://wa.me/254727016623?text=hello%20mr%20ronald%20amintrested%20in%20BUGATTI%20DIVO%20https://github.com/rhonaldh265/fahari-cars/blob/main/bugati.png?raw=true" class="button">I'm Interested in BUGATTI DIVO</a>
+    <a href="https://wa.me/254727016623?text=Hello%20Mr.%20Ronald,%20I%20am%20interested%20in%20BUGATTI%20DIVO.%20Image:%20https://github.com/rhonaldh265/fahari-cars/blob/main/bugati.png?raw=true" class="button">I'm Interested</a>
     <button class="button" onclick="openModal('divoModal')">View More</button>
 </div>
 <div class="item">
-    <h2> </h2>
+    <h2>TOYOTA LANDCRUISER</h2>
     <img src="toyotaprado.png" alt="Toyota Land Cruiser">
     <p>6,650,000.00 KSH<br>
         2000CC<br>
         ACCIDENT FREE</p>
-    <a href="https://wa.me/254727016623?text=hello%20mr%20ronald%20%amintrested%20in%20Toyota Land Cruiser :%20https://github.com/rhonaldh265/fahari-cars/blob/main/toyotaprado.png?raw=true
-    " class="button">I'm Interested in TOYOTA LANDCRUISER</a>
+    <a href="https://wa.me/254727016623?text=Hello%20Mr.%20Ronald,%20I%20am%20interested%20in%20TOYOTA%20LANDCRUISER.%20Image:%20https://github.com/rhonaldh265/fahari-cars/blob/main/toyotaprado.png?raw=true" class="button">I'm Interested</a>
     <button class="button" onclick="openModal('landCruiserModal')">View More</button>
 </div>
 
@@ -127,22 +141,22 @@
 </div>
 
 <script>
-    function openModal(modalId) {
-        document.getElementById(modalId).style.display = "block";
-    }
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
 
-    function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-    }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
 
-    window.onclick = function(event) {
-        const modals = document.querySelectorAll('.modal');
-        modals.forEach(modal => {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        });
-    }
-</script>
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
