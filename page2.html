@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .content {
+            z-index: 1; /* Place content above the video */
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<div class="video-background">
+    <video src="video.mp4"  loop autoplay muted ></video>
+</div>
+<div class="content">
+</div>
+<p><h1><mark> welcome to fahari cars </mark> ,, </p>
+
+    <p> <span style="color: green; font-weight;">Fahari cars is here for you we got you covered with great deals</span>
+
+</body>
+
+<a href="HTML File.html">
+    <button>Proceed</button>
+</a>
+</html>
